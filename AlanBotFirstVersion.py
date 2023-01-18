@@ -18,6 +18,11 @@ photo_three = open('D:/Programming/PyCharm/PyCharmProjects/TelegrammBots/Photos/
 @bot.message_handler(commands=['start'])
 def start(message):
     mess = f"Choose the language.\nВыбирите язык.\nTilni tanlang.\nТілді таңдаңыз\n Забонро интихоб кунед\n/english - 🇬🇧English language\n/russian -🇷🇺Русский язык\n/uzbek - 🇺🇿O'zbek tili\n/kazakh - 🇰🇿Қазақ тілі\n/tajik - 🇹🇯тоҷикӣ"
+    bot.send_message(message.chat.id, mess, parse_mode='html')
+
+
+@bot.message_handler(commands=['english'])
+def english(message):
     if message.text == '/english':
         mess = f"Hi, <b>{message.from_user.first_name}</b>! I am telegram bot Alan Pro Cactus. I can give you information about the Alan Pro Cactus Channel. Everything you need in the menu\n/menu"
         bot.send_message(message.chat.id, mess, parse_mode='html')
@@ -112,6 +117,16 @@ def start(message):
                 desc = 'There is newer video:'
                 bot.send_message(message.chat.id, desc)
                 bot.send_message(message.chat.id, newVideo)
+            else:
+                bot.send_message(message.chat.id, "Unknown command. /menu")
+
+    else:
+        mess = f"Choose the language.\nВыбирите язык.\nTilni tanlang.\nТілді таңдаңыз\n Забонро интихоб кунед\n/english - 🇬🇧English language\n/russian -🇷🇺Русский язык\n/uzbek - 🇺🇿O'zbek tili\n/kazakh - 🇰🇿Қазақ тілі\n/tajik - 🇹🇯тоҷикӣ"
+        bot.send_message(message.chat.id, mess)
+
+
+@bot.message_handler(commands=['russian'])
+def russian(message):
     if message.text == '/russian':
         mess = f"Привет, <b>{message.from_user.first_name}</b>! Я телеграм бот Алана Про кактуса. Я могу дать тебе информацию об Канале Алан Про кактус. Все что нужно в меню\n/menu "
         bot.send_message(message.chat.id, mess, parse_mode='html')
@@ -206,6 +221,16 @@ def start(message):
                 desc = 'Вот новое видео:'
                 bot.send_message(message.chat.id, desc)
                 bot.send_message(message.chat.id, newVideo)
+            else:
+                bot.send_message(message.chat.id, "Неправильная команда! /menu")
+
+    else:
+        mess = f"Choose the language.\nВыбирите язык.\nTilni tanlang.\nТілді таңдаңыз\n Забонро интихоб кунед\n/english - 🇬🇧English language\n/russian -🇷🇺Русский язык\n/uzbek - 🇺🇿O'zbek tili\n/kazakh - 🇰🇿Қазақ тілі\n/tajik - 🇹🇯тоҷикӣ"
+        bot.send_message(message.chat.id, mess)
+
+
+@bot.message_handler(commands=['uzbek'])
+def uzbek(message):
     if message.text == '/uzbek':
         mess = f"Salom, <b>{message.from_user.first_name}</b>! Men Alan Pro kaktus telegram botiman. Men sizga Alan Pro Cactus kanali haqida ma'lumot bera olaman. Menyuda sizga kerak bo'lgan hamma narsa\n/menu"
         bot.send_message(message.chat.id, mess, parse_mode='html')
@@ -300,6 +325,15 @@ def start(message):
                 desc = 'Mana Yangi video:'
                 bot.send_message(message.chat.id, desc)
                 bot.send_message(message.chat.id, newVideo)
+            else:
+                bot.send_message(message.chat.id, "Hato! /menu")
+    else:
+        mess = f"Choose the language.\nВыбирите язык.\nTilni tanlang.\nТілді таңдаңыз\n Забонро интихоб кунед\n/english - 🇬🇧English language\n/russian -🇷🇺Русский язык\n/uzbek - 🇺🇿O'zbek tili\n/kazakh - 🇰🇿Қазақ тілі\n/tajik - 🇹🇯тоҷикӣ"
+        bot.send_message(message.chat.id, mess)
+
+
+@bot.message_handler(commands=['kazakh'])
+def kazakh(message):
     if message.text == '/kazakh':
         mess = f"Эй, <b>{message.from_user.first_name}</b>! Мен Alan Pro кактусы телеграмма ботымын. Мен сізге Alan Pro Cactus арнасы туралы ақпарат бере аламын. Мәзірде қажет нәрсенің бәрі\n/menu"
         bot.send_message(message.chat.id, mess, parse_mode='html')
@@ -394,6 +428,15 @@ def start(message):
                 desc = 'Міне, жаңа бейне:'
                 bot.send_message(message.chat.id, desc)
                 bot.send_message(message.chat.id, newVideo)
+            else:
+                bot.send_message(message.chat.id, "Белгісіз команда")
+    else:
+        mess = f"Choose the language.\nВыбирите язык.\nTilni tanlang.\nТілді таңдаңыз\n Забонро интихоб кунед\n/english - 🇬🇧English language\n/russian -🇷🇺Русский язык\n/uzbek - 🇺🇿O'zbek tili\n/kazakh - 🇰🇿Қазақ тілі\n/tajik - 🇹🇯тоҷикӣ"
+        bot.send_message(message.chat.id, mess)
+
+
+@bot.message_handler(commands=['tajik'])
+def tandjik(message):
     if message.text == '/tajik':
         mess = f"Эй, <b>{message.from_user.first_name}</b>! Ман боти телеграмм Alan Pro кактус ҳастам. Ман метавонам ба шумо дар бораи канали Alan Pro Cactus маълумот диҳам. Ҳама чизест, ки ба шумо дар меню\n/menu лозим аст"
         bot.send_message(message.chat.id, mess, parse_mode='html')
@@ -488,9 +531,12 @@ def start(message):
                 desc = 'Ана видеои нав:'
                 bot.send_message(message.chat.id, desc)
                 bot.send_message(message.chat.id, newVideo)
+            else:
+                bot.send_message(message.chat.id, "Дастаи номаълум")
+
     else:
-        bot.send_message(message.chat.id, mess, parse_mode="html")
-    bot.send_message(message.chat.id, mess, parse_mode='html')
+        mess = f"Choose the language.\nВыбирите язык.\nTilni tanlang.\nТілді таңдаңыз\n Забонро интихоб кунед\n/english - 🇬🇧English language\n/russian -🇷🇺Русский язык\n/uzbek - 🇺🇿O'zbek tili\n/kazakh - 🇰🇿Қазақ тілі\n/tajik - 🇹🇯тоҷикӣ"
+        bot.send_message(message.chat.id, mess)
 
 
 bot.polling(none_stop=True)
