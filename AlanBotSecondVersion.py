@@ -1,7 +1,7 @@
 import telebot
 from telebot import types
 
-bot = telebot.TeleBot('5906498689:AAHA3u4NAM6bN_fzeGSqXcWl05xJL2Dx6CI')
+bot = telebot.TeleBot('Token')
 print("Bot has started")
 
 youTubeChannel = "https://youtube.com/@user-el5ib2sd6r"
